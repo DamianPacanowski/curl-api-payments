@@ -17,9 +17,8 @@ if(empty($result))
 else 
 {
     $json=json_decode($result);
-    echo 'Access Token: '.$json->access_token;
-	  var_dump($json);
-	  var_dump($json->access_token);
+    var_dump($json);
+    var_dump($json->access_token);
 }
 curl_close($ch);
 ?>
