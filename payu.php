@@ -3,7 +3,7 @@
 	{
 		$Id='145227';
 		$Hash='12f071174cb7eb79d4aac5bc2f07563f';
-		$Url_con='https://secure.snd.payu.com/pl/standard/user/oauth/authorize';
+		$Url_con='https://secure.payu.com/pl/standard/user/oauth/authorize';
 		$Url_orders='https://secure.payu.com/api/v2_1/orders';
 	}
 	else
