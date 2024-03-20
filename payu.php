@@ -1,8 +1,21 @@
 <?php
-   	$curl_init=curl_init();
-	$clientId='300746';
-	$secretHash='2ee86a66e5d97e3fadc400c9f19b065d';
-	curl_setopt($curl_init,CURLOPT_URL,'https://secure.snd.payu.com/pl/standard/user/oauth/authorize');
+   	if(isset($_GET['production']))
+	{
+		$Id='145227';
+		$Hash='12f071174cb7eb79d4aac5bc2f07563f';
+		$Url_con='https://secure.snd.payu.com/pl/standard/user/oauth/authorize';
+	}
+	else
+	{
+		$Id='300746';
+		$Hash='2ee86a66e5d97e3fadc400c9f19b065d';
+		$Url_con='https://secure.snd.payu.com/pl/standard/user/oauth/authorize';
+	}
+	
+	$curl_init=curl_init();
+	$clientId=$Id;
+	$secretHash=$Hash;
+	curl_setopt($curl_init,CURLOPT_URL,$Url_con);
 	curl_setopt($curl_init,CURLOPT_HEADER,false);
 	curl_setopt($curl_init,CURLOPT_SSL_VERIFYPEER,false);
 	curl_setopt($curl_init,CURLOPT_POST,true);
@@ -22,21 +35,21 @@
 	
 		$array_products = 
 		[
-			'notifyUrl' => 'https://notifyUrl',
-			'customerIp' => '**.**.**.**',
+			'notifyUrl' => 'https://'.$_SERVER['SERVER_NAME'].'/?notifyUrl',
+			'customerIp' => $_SERVER['REMOTE_ADDR'],
 			'merchantPosId' => '*******',
-			'description' => 'test_description',
+			'description' => 'description',
 			'currencyCode' => 'PLN',
 			'totalAmount' => 1000,
 			'products' => 
 			[
 				[
-					'name' => 'Wireless mouse',
+					'name' => 'name',
 					'unitPrice' => 15000,
 					'quantity' => 1,
 				],
 				[
-					'name' => 'HDMI cable',
+					'name' => 'name',
 					'unitPrice' => 6000,
 					'quantity' => 1,
 				],
