@@ -33,7 +33,7 @@
 	{
 		$json_decode=json_decode($curl_exec);
 		$access_token=$json_decode->access_token;
-		$array_products = 
+		$products = 
 		[
 			'notifyUrl' => 'https://'.$_SERVER['SERVER_NAME'].'/?notifyUrl',
 			'customerIp' => $_SERVER['REMOTE_ADDR'],
@@ -55,7 +55,7 @@
 				],
 			]
 		];
-		$json_encode=json_encode($array_products);
+		$json_encode=json_encode($products);
 		$authorization = 'Authorization: Bearer '.$access_token;
 		curl_setopt($curl_init,CURLOPT_URL,$Url_orders);	
 		curl_setopt($curl_init,CURLOPT_HTTPHEADER,array('Content-Type: application/json',$authorization));
