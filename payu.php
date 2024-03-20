@@ -23,8 +23,8 @@
 		$array_products = 
 		[
 			'notifyUrl' => 'https://uniap.pl/?notifyUrl',
-			'customerIp' => '77.234.20.72',
-			'merchantPosId' => '300746',
+			'customerIp' => '**.**.**.**',
+			'merchantPosId' => '*******',
 			'description' => 'test_description',
 			'currencyCode' => 'PLN',
 			'totalAmount' => 1000,
