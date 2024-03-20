@@ -22,7 +22,7 @@
 	
 		$array_products = 
 		[
-			'notifyUrl' => 'https://uniap.pl/?notifyUrl',
+			'notifyUrl' => 'https://notifyUrl',
 			'customerIp' => '**.**.**.**',
 			'merchantPosId' => '*******',
 			'description' => 'test_description',
