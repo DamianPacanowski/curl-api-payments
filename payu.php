@@ -37,7 +37,7 @@
 		[
 			'notifyUrl' => 'https://'.$_SERVER['SERVER_NAME'].'/?notifyUrl',
 			'customerIp' => $_SERVER['REMOTE_ADDR'],
-			'merchantPosId' => '*******',
+			'merchantPosId' => $Id,
 			'description' => 'description',
 			'currencyCode' => 'PLN',
 			'totalAmount' => 1000,
