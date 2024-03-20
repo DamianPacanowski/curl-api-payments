@@ -4,12 +4,14 @@
 		$Id='145227';
 		$Hash='12f071174cb7eb79d4aac5bc2f07563f';
 		$Url_con='https://secure.snd.payu.com/pl/standard/user/oauth/authorize';
+		$Url_orders='https://secure.payu.com/api/v2_1/orders';
 	}
 	else
 	{
 		$Id='300746';
 		$Hash='2ee86a66e5d97e3fadc400c9f19b065d';
 		$Url_con='https://secure.snd.payu.com/pl/standard/user/oauth/authorize';
+		$Url_orders='https://secure.snd.payu.com/api/v2_1/orders';
 	}
 	
 	$curl_init=curl_init();
@@ -31,8 +33,6 @@
 	{
 		$json_decode=json_decode($curl_exec);
 		$access_token=$json_decode->access_token;
-		
-	
 		$array_products = 
 		[
 			'notifyUrl' => 'https://'.$_SERVER['SERVER_NAME'].'/?notifyUrl',
@@ -55,12 +55,9 @@
 				],
 			]
 		];
-		
-		$json_encode=json_encode($array_products); 	
-		
+		$json_encode=json_encode($array_products);
 		$authorization = 'Authorization: Bearer '.$access_token;
-		
-		curl_setopt($curl_init,CURLOPT_URL,'https://secure.snd.payu.com/api/v2_1/orders');	
+		curl_setopt($curl_init,CURLOPT_URL,$Url_orders);	
 		curl_setopt($curl_init,CURLOPT_HTTPHEADER,array('Content-Type: application/json',$authorization));
 		curl_setopt($curl_init,CURLOPT_POST,true);
 		curl_setopt($curl_init,CURLOPT_RETURNTRANSFER,true);
