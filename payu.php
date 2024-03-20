@@ -1,5 +1,5 @@
 <?php
-    $curl_init=curl_init();
+   	$curl_init=curl_init();
 	$clientId='300746';
 	$secretHash='2ee86a66e5d97e3fadc400c9f19b065d';
 	curl_setopt($curl_init,CURLOPT_URL,'https://secure.snd.payu.com/pl/standard/user/oauth/authorize');
