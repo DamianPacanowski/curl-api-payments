@@ -43,11 +43,6 @@
 			]
 		];
 		
-		
-		
-		//curl_close($curl_init);
-		//var_dump($array_filds);
-		
 		$json_encode=json_encode($array_products); 	
 		
 		$authorization = 'Authorization: Bearer '.$access_token;
