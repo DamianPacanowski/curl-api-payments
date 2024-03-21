@@ -6,12 +6,19 @@
 		$Url_con='https://secure.payu.com/pl/standard/user/oauth/authorize';
 		$Url_orders='https://secure.payu.com/api/v2_1/orders';
 	}
-	else
+	elseif(isset($_GET['sandbox']))
 	{
 		$Id='300746';
 		$Hash='2ee86a66e5d97e3fadc400c9f19b065d';
 		$Url_con='https://secure.snd.payu.com/pl/standard/user/oauth/authorize';
 		$Url_orders='https://secure.snd.payu.com/api/v2_1/orders';
+	}
+	else
+	{
+		$Id='yourId';
+		$Hash='yourHash';
+		$Url_con='https://secure.payu.com/pl/standard/user/oauth/authorize';
+		$Url_orders='https://secure.payu.com/api/v2_1/orders';
 	}
 	
 	$curl_init=curl_init();
